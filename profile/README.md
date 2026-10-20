@@ -1,48 +1,44 @@
-<p align="center">
-  <img src="https://nafphp.github.io/docs/assets/naf-logo-small-square.png" alt="NAF" width="160">
-</p>
+# NAF
 
-<p align="center">
-  <strong>Not Another Framework.</strong><br>
-  A lightweight PHP microframework designed to stay out of your way.<br>
-  <em>As simple as possible, as flexible as necessary.</em>
-</p>
+[![Framework build](https://github.com/nafphp/framework/actions/workflows/php.yml/badge.svg?branch=main)](https://github.com/nafphp/framework/actions/workflows/php.yml)
+[![Documentation build](https://github.com/nafphp/docs/actions/workflows/docs.yml/badge.svg?branch=main)](https://github.com/nafphp/docs/actions/workflows/docs.yml)
+[![Packagist version](https://img.shields.io/packagist/v/naf/framework)](https://packagist.org/packages/naf/framework)
+[![PHP 8.3 or newer](https://img.shields.io/badge/PHP-8.3%2B-777BB4)](https://nafphp.github.io/docs/install/)
+[![License](https://img.shields.io/github/license/nafphp/framework)](https://github.com/nafphp/framework/blob/main/LICENSE)
 
-<p align="center">
-  <a href="https://github.com/nafphp/framework"><img alt="Framework" src="https://img.shields.io/badge/Core_Framework-naf%2Fframework-blue?style=flat-square"></a>
-  <a href="https://nafphp.github.io/docs"><img alt="Docs" src="https://img.shields.io/badge/Docs-View_on_GitHub_Pages-brightgreen?style=flat-square"></a>
-</p>
+NAF (Not Another Framework) is a PHP microframework for web applications, APIs and services.
+The [core](https://github.com/nafphp/framework) handles routing, controller dispatch,
+dependency injection, configuration, events and HTTP responses. Composer plugins add
+templates, persistence, authentication and background jobs.
 
----
+Application code uses ordinary PHP classes and namespaced functions. Controllers receive
+services through their constructors, and route handlers return PSR-7 responses. The core
+uses a PSR-11 container and PSR-3 logging.
 
-## 🔧 What is NAF?
+## Getting started
 
-**NAF** is a microframework for developers who want **full control** over their stack.
-The core routes a request and dispatches it. Everything else is a plugin you add when you
-need it.
+You need PHP 8.3 or newer and Composer.
 
-It comes with:
+```bash
+composer create-project naf/app my-app
+```
 
-- PSR-based architecture (PSR-3, PSR-4, PSR-7, PSR-11, PSR-18)
-- Minimalist routing and dispatching
-- A plugin system for optional components — views, forms, sessions, database, and the rest
-- A native PHP approach, no complex abstraction layers
+The starter includes the framework, views, forms and sessions.
+Follow the [installation guide](https://nafphp.github.io/docs/install/) to run it, then build
+[your first application](https://nafphp.github.io/docs/first-app/).
 
-📦 *Use what you need. Leave out what you don't.*
+## Plugins
 
----
-
-## 🧩 Official plugins
-
-Choose plugins by what your application needs. Each package links to its repository;
-setup and usage are covered in the [documentation](https://nafphp.github.io/docs/).
+Install plugins as Composer dependencies of your application. The
+[package selection guide](https://nafphp.github.io/docs/choosing-packages/) covers what each
+one needs and when to use it.
 
 ### Web pages and input
 
 | Plugin | Description |
 | --- | --- |
-| [`naf/view`](https://github.com/nafphp/view) | Native PHP templating with layout blocks |
-| [`naf/form`](https://github.com/nafphp/form) | CSRF protection, validation and input memory |
+| [`naf/view`](https://github.com/nafphp/view) | PHP templates, layouts and reusable partials |
+| [`naf/form`](https://github.com/nafphp/form) | Form validation, CSRF protection and input repopulation |
 | [`naf/session`](https://github.com/nafphp/session) | Session and flash message support |
 | [`naf/flow`](https://github.com/nafphp/flow) | Reactive JavaScript components and HTML updates for PHP views |
 | [`naf/i18n`](https://github.com/nafphp/i18n) | Translations and pluralisation |
@@ -61,7 +57,7 @@ setup and usage are covered in the [documentation](https://nafphp.github.io/docs
 | --- | --- |
 | [`naf/auth`](https://github.com/nafphp/auth) | Authentication, permission checks and policies with your own user model |
 | [`naf/rbac`](https://github.com/nafphp/rbac) | Database-backed roles, permissions and grant management |
-| [`naf/auth-ldap`](https://github.com/nafphp/auth-ldap) | LDAP sign-in through the existing Auth provider contract |
+| [`naf/auth-ldap`](https://github.com/nafphp/auth-ldap) | LDAP authentication through Auth providers |
 | [`naf/oauth-client`](https://github.com/nafphp/oauth-client) | Sign in with external OAuth2 and OpenID Connect providers |
 | [`naf/oauth-server`](https://github.com/nafphp/oauth-server) | OAuth2 authorization server, API protection and OpenID Connect |
 | [`naf/rate-limit`](https://github.com/nafphp/rate-limit) | Atomic database-backed rate limits with fixed windows |
@@ -70,7 +66,7 @@ setup and usage are covered in the [documentation](https://nafphp.github.io/docs
 
 | Plugin | Description |
 | --- | --- |
-| [`naf/cli`](https://github.com/nafphp/cli) | The `naf` console and your own commands |
+| [`naf/cli`](https://github.com/nafphp/cli) | Application commands through the `naf` console |
 | [`naf/queue`](https://github.com/nafphp/queue) | Background jobs and workers |
 | [`naf/schedule`](https://github.com/nafphp/schedule) | Recurring tasks in cron syntax |
 
@@ -81,7 +77,7 @@ setup and usage are covered in the [documentation](https://nafphp.github.io/docs
 | [`naf/mail`](https://github.com/nafphp/mail) | Mail delivery with attachments and replaceable transports |
 | [`naf/client`](https://github.com/nafphp/client) | A PSR-18 HTTP client |
 | [`naf/websocket`](https://github.com/nafphp/websocket) | A PHP WebSocket server for application change notifications |
-| [`naf/mcp`](https://github.com/nafphp/mcp) | Let AI agents call into your application |
+| [`naf/mcp`](https://github.com/nafphp/mcp) | Expose application tools over the Model Context Protocol |
 | [`naf/alexa`](https://github.com/nafphp/alexa) | Alexa+ MCP integration with OAuth setup and diagnostics |
 | [`naf/monitoring`](https://github.com/nafphp/monitoring) | Metrics, StatsD export and optional PSR-3 logging integration |
 
@@ -89,28 +85,14 @@ setup and usage are covered in the [documentation](https://nafphp.github.io/docs
 
 | Plugin | Description |
 | --- | --- |
-| [`naf/cms`](https://github.com/nafphp/cms) | NafCMS: extensible content management inside a NAF application |
-| [`naf/board`](https://github.com/nafphp/board) | Project-isolated Kanban boards and extensions powering Nafinity |
+| [`naf/cms`](https://github.com/nafphp/cms) | NafCMS content management with pages, media and custom content types |
+| [`naf/board`](https://github.com/nafphp/board) | Kanban boards with project isolation and an extension API; used by Nafinity |
 
-Not sure which of these you need?
-**[Start here](https://nafphp.github.io/docs/choosing-packages/)** — it answers that question
-before you install anything.
+## Documentation
 
----
+The [NAF documentation](https://nafphp.github.io/docs/) covers the framework, plugins and
+complete application examples. The [function index](https://nafphp.github.io/docs/function-index/)
+lists public helpers and their signatures.
 
-## 📚 Documentation
-
-📘 Read the full docs at **[nafphp.github.io/docs](https://nafphp.github.io/docs)**
-
-Coming from NixPHP? The [upgrade guide](https://nafphp.github.io/docs/upgrading-from-nixphp/)
-covers the rename in one page.
-
----
-
-## 🚀 Get started
-
-```bash
-composer create-project naf/app my-app
-```
-
-Then follow [your first application](https://nafphp.github.io/docs/first-app/).
+For existing NixPHP applications, see the
+[migration guide](https://nafphp.github.io/docs/upgrading-from-nixphp/).
