@@ -1,37 +1,45 @@
-# NAF
+<p align="center">
+  <a href="https://github.com/nafphp/framework">
+    <img src="https://nafphp.github.io/docs/assets/naf-logo-small-square.png" alt="NAF logo" width="160" height="160">
+  </a>
+</p>
 
-[![Framework build](https://github.com/nafphp/framework/actions/workflows/php.yml/badge.svg?branch=main)](https://github.com/nafphp/framework/actions/workflows/php.yml)
-[![Documentation build](https://github.com/nafphp/docs/actions/workflows/docs.yml/badge.svg?branch=main)](https://github.com/nafphp/docs/actions/workflows/docs.yml)
-[![Packagist version](https://img.shields.io/packagist/v/naf/framework)](https://packagist.org/packages/naf/framework)
-[![PHP 8.3 or newer](https://img.shields.io/badge/PHP-8.3%2B-777BB4)](https://nafphp.github.io/docs/install/)
-[![License](https://img.shields.io/github/license/nafphp/framework)](https://github.com/nafphp/framework/blob/main/LICENSE)
+<h1 align="center">Not Another Framework.</h1>
 
-NAF (Not Another Framework) is a PHP microframework for web applications, APIs and services.
-The [core](https://github.com/nafphp/framework) handles routing, controller dispatch,
-dependency injection, configuration, events and HTTP responses. Composer plugins add
-templates, persistence, authentication and background jobs.
+<p align="center">
+  <a href="https://github.com/nafphp/framework/actions/workflows/php.yml"><img src="https://github.com/nafphp/framework/actions/workflows/php.yml/badge.svg?branch=main" alt="Framework build"></a>
+  <a href="https://github.com/nafphp/docs/actions/workflows/docs.yml"><img src="https://github.com/nafphp/docs/actions/workflows/docs.yml/badge.svg?branch=main" alt="Documentation build"></a>
+  <a href="https://packagist.org/packages/naf/framework"><img src="https://img.shields.io/packagist/v/naf/framework" alt="Packagist version"></a>
+  <a href="https://nafphp.github.io/docs/install/"><img src="https://img.shields.io/badge/PHP-8.3%2B-777BB4" alt="PHP 8.3 or newer"></a>
+  <a href="https://github.com/nafphp/framework/blob/main/LICENSE"><img src="https://img.shields.io/github/license/nafphp/framework" alt="License"></a>
+</p>
 
-Application code uses ordinary PHP classes and namespaced functions. Controllers receive
-services through their constructors, and route handlers return PSR-7 responses. The core
-uses a PSR-11 container and PSR-3 logging.
+NAF is a small PHP framework for websites, APIs and services. You write your application
+with ordinary PHP classes and namespaced helper functions. The
+[core](https://github.com/nafphp/framework) takes care of routing, dependency injection,
+configuration and HTTP requests and responses.
+
+When you need more, install a plugin with Composer. NAF finds and loads your installed
+plugins automatically, so you don't need to register them by hand.
 
 ## Getting started
 
-You need PHP 8.3 or newer and Composer.
+To create your first project, you'll need PHP 8.3 or newer and Composer:
 
 ```bash
 composer create-project naf/app my-app
 ```
 
-The starter includes the framework, views, forms and sessions.
-Follow the [installation guide](https://nafphp.github.io/docs/install/) to run it, then build
-[your first application](https://nafphp.github.io/docs/first-app/).
+Your new project comes with views, forms and sessions already installed. The
+[installation guide](https://nafphp.github.io/docs/install/) helps you get it running.
+From there, [your first application](https://nafphp.github.io/docs/first-app/) walks you
+through building an HTML page and a JSON endpoint.
 
 ## Plugins
 
-Install plugins as Composer dependencies of your application. The
-[package selection guide](https://nafphp.github.io/docs/choosing-packages/) covers what each
-one needs and when to use it.
+Pick the plugins that fit your project. If you're unsure where to start, the
+[package selection guide](https://nafphp.github.io/docs/choosing-packages/) helps you choose.
+Each plugin's guide walks you through its setup.
 
 ### Web pages and input
 
@@ -90,9 +98,9 @@ one needs and when to use it.
 
 ## Documentation
 
-The [NAF documentation](https://nafphp.github.io/docs/) covers the framework, plugins and
-complete application examples. The [function index](https://nafphp.github.io/docs/function-index/)
-lists public helpers and their signatures.
+You'll find step-by-step guides and complete examples in the
+[NAF documentation](https://nafphp.github.io/docs/). When you need to look up a helper, the
+[function index](https://nafphp.github.io/docs/function-index/) lists its signature.
 
-For existing NixPHP applications, see the
-[migration guide](https://nafphp.github.io/docs/upgrading-from-nixphp/).
+If you're bringing over a NixPHP application, the
+[migration guide](https://nafphp.github.io/docs/upgrading-from-nixphp/) explains what to change.
